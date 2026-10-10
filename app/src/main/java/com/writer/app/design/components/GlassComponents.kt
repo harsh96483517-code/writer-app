@@ -48,11 +48,13 @@ fun Modifier.glassSurface(
 ): Modifier {
     val glass = WriterTheme.colors
     val fill = if (elevated) glass.glassSurfaceElevated else glass.glassSurface
+    // Alpha must stay within 0f..1f — Compose throws if it is out of range.
+    val highlightAlpha = (fill.alpha * 1.15f).coerceIn(0f, 1f)
     return this
         .clip(shape)
         .background(
             brush = Brush.verticalGradient(
-                listOf(fill.copy(alpha = fill.alpha * 1.15f), fill)
+                listOf(fill.copy(alpha = highlightAlpha), fill)
             )
         )
         .then(
