@@ -8,8 +8,8 @@ import com.writer.app.ui.WriterApp
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
-        enableEdgeToEdge()
         super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
         val container = (application as WriterApplication).container
         setContent {
             WriterApp(container)

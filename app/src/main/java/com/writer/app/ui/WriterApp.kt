@@ -1,6 +1,7 @@
 package com.writer.app.ui
 
 import androidx.compose.foundation.layout.Box
+import androidx.compose.ui.Alignment
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
@@ -9,6 +10,7 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.navigation.compose.rememberNavController
+import com.writer.app.design.components.GlassLoadingIndicator
 import com.writer.app.design.theme.WriterTheme
 import com.writer.app.di.AppContainer
 import com.writer.app.model.UserPreferences
@@ -38,6 +40,10 @@ fun WriterApp(container: AppContainer) {
                         container = container,
                         startDestination = start
                     )
+                }
+            } else {
+                Box(Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
+                    GlassLoadingIndicator("Writer शुरू हो रहा है...")
                 }
             }
         }
