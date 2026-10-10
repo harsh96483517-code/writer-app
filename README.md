@@ -61,6 +61,20 @@ app/src/main/java/com/writer/app/
 - [x] Profile + Settings: theme (light/dark/system), language, editor toggles, privacy actions
 - [x] Light and dark Liquid Glass themes, responsive layouts, edge-to-edge
 
+## Download the APK (built by GitHub Actions)
+
+Every push to `main` builds a debug APK on GitHub's runners via
+[`.github/workflows/android.yml`](.github/workflows/android.yml) and publishes it
+to a **Release**, so no local Android SDK is required.
+
+- Latest APK: **https://github.com/harsh96483517-code/writer-app/releases/latest**
+  (file `app-debug.apk`)
+- Or open the **Actions** tab, pick the latest *Build APK* run, and download the
+  `writer-debug-apk` artifact.
+
+Install it on a device with "Install unknown apps" allowed for your browser/file
+manager.
+
 ## Building
 
 The project targets **AGP 8.5.2 / Kotlin 1.9.24 / Gradle 8.7 / JDK 17**.
