@@ -165,10 +165,10 @@ fun GlassButton(
 
 @Composable
 fun GlassIconButton(
-    icon: @Composable () -> Unit,
     onClick: () -> Unit,
     modifier: Modifier = Modifier,
-    size: Dp = 44.dp
+    size: Dp = 44.dp,
+    icon: @Composable () -> Unit
 ) {
     Box(
         modifier = modifier
